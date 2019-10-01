@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import com.ikoyski.asiapay.dto.ErrorResponse;
 
 @ControllerAdvice
-public class WebtoolsControllerAdvice {
+public class AsiapayControllerAdvice {
 
   public static final String JSON_PARSE_ERROR = "Malformed Request - Please make sure that the request is valid json"
       + " or that field datatypes are correct.";
   public static final String CONNECTION_TIMEOUT_ERROR = "Something went wrong, please try again later.";
 
-  public WebtoolsControllerAdvice() {
+  public AsiapayControllerAdvice() {
     super();
   }
 
