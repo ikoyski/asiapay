@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,7 +15,7 @@ import java.sql.Timestamp;
 @Controller
 public class AsiapayController {
     
-    @RequestMapping("/")
+    @GetMapping("/")
 	public String index(Map<String, Object> model) {
 		return "index"; // the view on /src/main/webapp/WEB-INF/jsp/index.jsp
 	}
