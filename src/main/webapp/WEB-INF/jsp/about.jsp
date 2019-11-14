@@ -15,16 +15,24 @@
     
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">AsiaPay</li>
+        <li class="breadcrumb-item"><a href="/">AsiaPay</a></li>
+        <li class="breadcrumb-item active" aria-current="page">About</li>
       </ol>
     </nav>
     
 	<div class="container">
 
 		<div class="starter-template">
-			<h2>Welcome</h2>
+			<h2>About</h2>
 			
-			<p>This site will house various clients that will consume AsiaPay APIs.</p>
+			<h3>Some Test Services</h3>
+			<p>
+			 The <a href="/actuator/health" target="_blank">/actuator/health</a> endpoint provides basic information about the application&apos;s health.
+			 The status will be UP as long as the application is healthy. It will show DOWN if the application gets unhealthy due to any issue like connectivity with the database or lack of disk space etc.
+			</p>
+			<p>
+			 The build and version information can be checked by calling the <a href="/actuator/info" target="_blank">/actuator/info</a> endpoint. This allows checking of the git tags, maven version, build date etc.
+			</p>			
 		</div>
 
 	</div>

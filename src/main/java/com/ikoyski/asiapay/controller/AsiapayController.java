@@ -1,9 +1,11 @@
 package com.ikoyski.asiapay.controller;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.extern.slf4j.Slf4j;
@@ -14,29 +16,27 @@ import java.sql.Timestamp;
 @Controller
 public class AsiapayController {
     
-    @GetMapping("/hello")
-    public String hello(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
-        
-        LOGGER.debug("Name:  {}", name);
-        
-        model.addAttribute("name", name);
-        
-        return "hello"; // the view on /src/main/webapp/WEB-INF/jsp/hello.jsp
-    }
+    @RequestMapping("/")
+	public String index(Map<String, Object> model) {
+		return "index"; // the view on /src/main/webapp/WEB-INF/jsp/index.jsp
+	}
     
-    @GetMapping("/")
-    public String index(Model model) {
-        
-        return "index"; 
-    }
-    
-    @GetMapping("/client-post-through-browser")
-    public String clientPostThroughBrowser(Model model) {
-        
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        
+    @GetMapping("/spn")
+    public String spn(Model model) {
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());        
         model.addAttribute("orderRef", timestamp.getTime());
-        return "client-post-through-browser"; 
+        
+        return "spn"; 
+    }
+     
+    @PostMapping("/spnProcess")
+    public String spnProcess(Model model){
+        return "redirect"; 
+    }
+    
+    @GetMapping("/about")
+    public String about(Model model) {        
+        return "about"; 
     }
     
 }
