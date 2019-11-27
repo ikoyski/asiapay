@@ -26,6 +26,8 @@
 		<div class="starter-template">
 			<form action="/redirect" method="post" target="_blank">
 			
+			  <input type="hidden" class="form-control" name="currentPage" value="${currentPage}" />
+			
 			  <div class="form-group">
                 <label for="gatewayUrl">Gateway URL:</label>
                 <jsp:include page="common/select-gateway-url-spn.jsp"/>

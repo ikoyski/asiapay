@@ -1,9 +1,9 @@
 package com.ikoyski.asiapay.service.impl;
 
-import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Formatter;
+import java.nio.charset.StandardCharsets;
 
 import org.springframework.stereotype.Component;
 import com.ikoyski.asiapay.service.SecurehashService;
@@ -12,16 +12,13 @@ import com.ikoyski.asiapay.service.SecurehashService;
 public class SecurehashServiceImpl implements SecurehashService {
 
   public String sha1(String plainText) {
-
 		String sha1 = "";
 		try {
 			MessageDigest crypt = MessageDigest.getInstance("SHA-1");
 			crypt.reset();
-			crypt.update(plainText.getBytes("UTF-8"));
+			crypt.update(plainText.getBytes(StandardCharsets.UTF_8));
 			sha1 = byteToHex(crypt.digest());
 		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		return sha1;
@@ -29,14 +26,12 @@ public class SecurehashServiceImpl implements SecurehashService {
 	
 	public String constructPlainText(String merchantId, String orderRef, String currCode, 
 	       String amount, String payType, String secureHashSecret) {
-		String text = ""
-				.concat(merchantId).concat("|")
+		return "".concat(merchantId).concat("|")
 				.concat(orderRef).concat("|")
 				.concat(currCode).concat("|")
 				.concat(amount).concat("|")
 				.concat(payType).concat("|")
 				.concat(secureHashSecret);				
-		 return text;
 	}
 
 	public String byteToHex(final byte[] hash) {

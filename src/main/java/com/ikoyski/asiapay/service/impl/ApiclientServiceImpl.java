@@ -8,8 +8,10 @@ import java.security.NoSuchAlgorithmException;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 
+import java.nio.charset.StandardCharsets;
+
 import org.springframework.stereotype.Component;
-import com.ikoyski.asiapay.service.ApiclientService;;
+import com.ikoyski.asiapay.service.ApiclientService;
 
 @Component
 public class ApiclientServiceImpl implements ApiclientService {
@@ -17,29 +19,18 @@ public class ApiclientServiceImpl implements ApiclientService {
   public String post(String params, String endpoint) {
 		String strResult = ""; 
 		
-		URL url;
 		try {
 			
-			url = new URL(endpoint);
+			URL url = new URL(endpoint);
 			
 			HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
 			
-			SSLContext sc;
-			try {
-				sc = SSLContext.getInstance("TLSv1.2");
-				sc.init(null, null, null);
-				con.setSSLSocketFactory(sc.getSocketFactory());
-			} catch (NoSuchAlgorithmException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}catch (KeyManagementException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} 
-			
+			SSLContext sc = SSLContext.getInstance("TLSv1.2");
+			sc.init(null, null, null);			
+			con.setSSLSocketFactory(sc.getSocketFactory());
 			con.setRequestMethod("POST");
 			con.setDoOutput(true);
-			con.getOutputStream().write(params.getBytes("UTF-8"));
+			con.getOutputStream().write(params.getBytes(StandardCharsets.UTF_8));
 			con.getOutputStream().flush();
 			
 			InputStream inStream = null;
@@ -56,16 +47,15 @@ public class ApiclientServiceImpl implements ApiclientService {
 				strResult = strResult + String.valueOf((char)c);                         
 			}
 			
-			//con.getInputStream().close();
-			//con.getOutputStream().close();
-			
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (KeyManagementException e) {
+			e.printStackTrace();
+		} 
 		
 		return strResult;
 	}
