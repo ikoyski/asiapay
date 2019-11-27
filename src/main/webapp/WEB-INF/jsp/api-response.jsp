@@ -27,12 +27,12 @@
 			
 			<div class="form-group">
                 <label for="postData">postData:</label>
-                <textarea class="form-control" id="postData" rows="3">${postData}</textarea>
+                <textarea class="form-control" id="postData" rows="5">${postData}</textarea>
             </div>
             
             <div class="form-group">
                 <label for="postResponse">postResponse:</label>
-                <textarea class="form-control" id="postResponse" rows="3">${postResponse}</textarea>
+                <textarea class="form-control" id="postResponse" rows="5">${postResponse}</textarea>
             </div>
 			
 		</div>

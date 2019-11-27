@@ -36,7 +36,9 @@ public class AsiapayController {
 	}
 	
 	@GetMapping("/about")
-    public String about(Model model) {        
+    public String about(Model model) {
+        model.addAttribute("currentPage", "About");
+        
         return "about"; 
     }
     
