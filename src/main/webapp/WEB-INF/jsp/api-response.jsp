@@ -24,6 +24,11 @@
 	<div class="container">
 
 		<div class="starter-template">
+		
+		    <div class="form-group">
+                <label for="gatewayUrl">gatewayUrl:</label>
+                <textarea class="form-control" id="gatewayUrl" rows="2">${gatewayUrl}</textarea>
+            </div>
 			
 			<div class="form-group">
                 <label for="postData">postData:</label>

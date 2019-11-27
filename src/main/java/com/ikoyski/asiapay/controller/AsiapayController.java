@@ -118,11 +118,12 @@ public class AsiapayController {
         params.remove("gatewayUrl");
         params.remove("secureHashSecret");
         
-        String plainText = securehashService.constructPlainText(params.get("merchantId"), params.get("orderRef"), 
-        		params.get("currCode"), params.get("amount"), params.get("payType"), secureHashSecret);
-        
-        params.put("secureHash", securehashService.sha1(plainText));
-        
+        if(!"".equals(secureHashSecret)){
+            String plainText = securehashService.constructPlainText(params.get("merchantId"), params.get("orderRef"), 
+            		params.get("currCode"), params.get("amount"), params.get("payType"), secureHashSecret);            
+            params.put("secureHash", securehashService.sha1(plainText));
+        }
+    
         model.addAttribute("gatewayUrl", gatewayUrl); 
         model.addAttribute("params", params);
         
@@ -141,17 +142,18 @@ public class AsiapayController {
 
         String currentPage = request.getParameter("currentPage");
         String gatewayUrl = request.getParameter("gatewayUrl");
-        String secureHashSecret = request.getParameter("secureHashSecret"); 
+        String secureHashSecret = request.getParameter("secureHashSecret")==null?"":request.getParameter("secureHashSecret"); 
 
         params.remove("currentPage");
         params.remove("gatewayUrl");
         params.remove("secureHashSecret");
         
-        String plainText = securehashService.constructPlainText(params.get("merchantId"), params.get("orderRef"), 
-        		params.get("currCode"), params.get("amount"), params.get("payType"), secureHashSecret);
-        
-        params.put("secureHash", securehashService.sha1(plainText));
-        
+        if(!"".equals(secureHashSecret)){
+            String plainText = securehashService.constructPlainText(params.get("merchantId"), params.get("orderRef"), 
+            		params.get("currCode"), params.get("amount"), params.get("payType"), secureHashSecret);            
+            params.put("secureHash", securehashService.sha1(plainText));
+        }
+    
         String postData = "";
         Iterator<Map.Entry<String, String>> itr = params.entrySet().iterator(); 
         while(itr.hasNext()) { 
@@ -163,8 +165,9 @@ public class AsiapayController {
         String postResponse = apiclientService.post(postData, gatewayUrl);
         
         model.addAttribute("currentPage", currentPage); 
+        model.addAttribute("gatewayUrl", gatewayUrl);
         model.addAttribute("postData", postData); 
-        model.addAttribute("postResponse", postResponse);
+        model.addAttribute("postResponse", postResponse); 
         
         return "api-response";
     }
