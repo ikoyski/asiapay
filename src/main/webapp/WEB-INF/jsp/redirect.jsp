@@ -3,7 +3,7 @@
 
 <form id="paymentForm" method="post" action="${gatewayUrl}"> 
 <c:forEach var="entry" items="${params}"> 
-	<input type="text" class="input" name="${entry.key}" value="${entry.value}" />
+	<input type="hidden" name="${entry.key}" value="${entry.value}" />
 </c:forEach>
 </form>
 <script type="text/javascript">
