@@ -21,12 +21,12 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Integration <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li ${request_uri.endsWith('/spn') ? 'class="active"' : ''} ><a href="/spn">Client Post Through Browser</a></li>
-			<li ${request_uri.endsWith('/spn_promo') ? 'class="active"' : ''} ><a href="/spn_promo">Client Post Through Browser w/ PromoPay</a></li>
-			<li ${request_uri.endsWith('/spn_sch') ? 'class="active"' : ''} ><a href="/spn_sch">Client Post Through Browser w/ SchedulePay</a></li>
+			<li ${request_uri.endsWith('/spn-promo') ? 'class="active"' : ''} ><a href="/spn-promo">Client Post Through Browser w/ PromoPay</a></li>
+			<li ${request_uri.endsWith('/spn-sch') ? 'class="active"' : ''} ><a href="/spn-sch">Client Post Through Browser w/ SchedulePay</a></li>
 			<li ${request_uri.endsWith('/dpc') ? 'class="active"' : ''} ><a href="/dpc">Direct Client Side</a></li>
 			<li ${request_uri.endsWith('/dps') ? 'class="active"' : ''} ><a href="/dps">Direct Server Side</a></li>
 			<li ${request_uri.endsWith('/ref') ? 'class="active"' : ''} ><a href="/ref">Reference Payment</a></li>				
-            <li ${request_uri.endsWith('/hosted_mpi') ? 'class="active"' : ''} ><a href="/hosted_mpi">Hosted MPI</a></li>
+            <li ${request_uri.endsWith('/hosted-mpi') ? 'class="active"' : ''} ><a href="/hosted-mpi">Hosted MPI</a></li>
           </ul>
         </li>
         <li ${request_uri.equals('/about') ? 'class="active"' : ''} ><a href="/about">About</a></li>

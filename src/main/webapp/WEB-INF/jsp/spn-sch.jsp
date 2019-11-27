@@ -17,7 +17,7 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">AsiaPay</a></li>
         <li class="breadcrumb-item"><a href="#">Integrations</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Client Post Through Browser</li>
+        <li class="breadcrumb-item active" aria-current="page">Client Post Through Browser w/ SchedulePay</li>
       </ol>
     </nav>
     
@@ -69,6 +69,55 @@
               <div class="form-group">
                 <label for="orderRef">orderRef:</label>
                 <input type="text" class="form-control" id="orderRef" name="orderRef" value="${orderRef}" />
+              </div>
+              
+              <div class="form-group">
+                <label for="appId">appId:</label>
+                <input type="text" class="form-control" id="appId" name="appId" value="SP" />
+              </div>
+              
+              <div class="form-group">
+                <label for="schType">schType:</label>
+                <select class="form-control" id="schType" name="schType">
+                    <option value="Day">Day</option>
+                	<option value="Month">Month</option>
+                	<option value="Year">Year</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="nSch">nSch:</label>
+                <input type="text" class="form-control" id="nSch" name="nSch" value="1" />
+              </div>
+              
+              <div class="form-group">
+                <label for="sMonth">sMonth:</label>
+                <input type="text" class="form-control" id="sMonth" name="sMonth" value="${month}" />
+              </div>
+              
+              <div class="form-group">
+                <label for="sDay">sDay:</label>
+                <input type="text" class="form-control" id="sDay" name="sDay" value="${day}" />
+              </div>
+              
+              <div class="form-group">
+                <label for="sYear">sYear:</label>
+                <input type="text" class="form-control" id="sYear" name="sYear" value="${year}" />
+              </div>
+              
+              <div class="form-group">
+                <label for="name">name:</label>
+                <input type="text" class="form-control" id="name" name="name" value="Test Test" />
+              </div>
+              
+              <div class="form-group">
+                <label for="email">email:</label>
+                <input type="text" class="form-control" id="email" name="email" value="test@test.com" />
+              </div>
+              
+              <div class="form-group">
+                <label for="schStatus">schStatus:</label>
+                <input type="text" class="form-control" id="schStatus" name="schStatus" value="Active" />
               </div>
               
               <button type="submit" class="btn btn-default">Submit</button>

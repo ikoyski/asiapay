@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Timestamp;
 import java.util.*;
+import java.time.*;
 
 import com.ikoyski.asiapay.service.SecurehashService;
 
@@ -37,8 +38,21 @@ public class AsiapayController {
         
         return "spn"; 
     }
+    
+    @GetMapping("/spn-sch")
+    public String spnSch(Model model, HttpServletRequest request) {        
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());        
+        LocalDateTime now = LocalDateTime.now();
+        
+        model.addAttribute("orderRef", timestamp.getTime());
+        model.addAttribute("year", now.getYear());
+        model.addAttribute("month", now.getMonthValue());
+        model.addAttribute("day", now.getDayOfMonth());
+        
+        return "spn-sch"; 
+    }
      
-    @PostMapping("/spnProcess")
+    @PostMapping("/spn-process")
     public String spnProcess(Model model, HttpServletRequest request){
         Map<String, String> params = new HashMap<String, String>();
 
