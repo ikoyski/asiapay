@@ -17,18 +17,18 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">AsiaPay</a></li>
         <li class="breadcrumb-item"><a href="#">Integrations</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Client Post Through Browser</li>
+        <li class="breadcrumb-item active" aria-current="page">${currentPage}</li>
       </ol>
     </nav>
     
 	<div class="container">
 
 		<div class="starter-template">
-			<form action="/spn-process" method="post" target="_blank">
+			<form action="/redirect" method="post" target="_blank">
 			
 			  <div class="form-group">
                 <label for="gatewayUrl">Gateway URL:</label>
-                <jsp:include page="common/select-gateway-url.jsp"/>
+                <jsp:include page="common/select-gateway-url-spn.jsp"/>
               </div>
 			
               <div class="form-group">

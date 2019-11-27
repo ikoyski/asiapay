@@ -28,7 +28,7 @@
 			
 			  <div class="form-group">
                 <label for="gatewayUrl">Gateway URL:</label>
-                <jsp:include page="common/select-gateway-url-spn.jsp"/>
+                <jsp:include page="common/select-gateway-url-dpc.jsp"/>
               </div>
 			
               <div class="form-group">
@@ -62,8 +62,8 @@
               </div>
               
               <div class="form-group">
-                <label for="payMethod">payMethod:</label>
-                <input type="text" class="form-control" id="payMethod" name="payMethod" value="ALL" />
+                <label for="pMethod">pMethod:</label>
+                <input type="text" class="form-control" id="pMethod" name="pMethod" value="VISA" />
               </div>
               
               <div class="form-group">
@@ -72,52 +72,28 @@
               </div>
               
               <div class="form-group">
-                <label for="appId">appId:</label>
-                <input type="text" class="form-control" id="appId" name="appId" value="SP" />
+                <label for="cardNo">cardNo:</label>
+                <input type="text" class="form-control" id="cardNo" name="cardNo" value="4918914107195005" />
               </div>
               
               <div class="form-group">
-                <label for="schType">schType:</label>
-                <select class="form-control" id="schType" name="schType">
-                    <option value="Day">Day</option>
-                	<option value="Month">Month</option>
-                	<option value="Year">Year</option>
-                </select>
+                <label for="cardHolder">cardHolder:</label>
+                <input type="text" class="form-control" id="cardHolder" name="cardHolder" value="Test Test" />
               </div>
               
               <div class="form-group">
-                <label for="nSch">nSch:</label>
-                <input type="text" class="form-control" id="nSch" name="nSch" value="1" />
+                <label for="epMonth">epMonth:</label>
+                <input type="text" class="form-control" id="epMonth" name="epMonth" value="07" />
               </div>
               
               <div class="form-group">
-                <label for="sMonth">sMonth:</label>
-                <input type="text" class="form-control" id="sMonth" name="sMonth" value="${month}" />
+                <label for="epYear">epYear:</label>
+                <input type="text" class="form-control" id="epYear" name="epYear" value="2020" />
               </div>
               
               <div class="form-group">
-                <label for="sDay">sDay:</label>
-                <input type="text" class="form-control" id="sDay" name="sDay" value="${day}" />
-              </div>
-              
-              <div class="form-group">
-                <label for="sYear">sYear:</label>
-                <input type="text" class="form-control" id="sYear" name="sYear" value="${year}" />
-              </div>
-              
-              <div class="form-group">
-                <label for="name">name:</label>
-                <input type="text" class="form-control" id="name" name="name" value="Test Test" />
-              </div>
-              
-              <div class="form-group">
-                <label for="email">email:</label>
-                <input type="text" class="form-control" id="email" name="email" value="test@test.com" />
-              </div>
-              
-              <div class="form-group">
-                <label for="schStatus">schStatus:</label>
-                <input type="text" class="form-control" id="schStatus" name="schStatus" value="Active" />
+                <label for="securityCode">securityCode:</label>
+                <input type="text" class="form-control" id="securityCode" name="securityCode" value="123" />
               </div>
               
               <button type="submit" class="btn btn-default">Submit</button>

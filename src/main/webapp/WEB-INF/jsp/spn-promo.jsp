@@ -72,52 +72,23 @@
               </div>
               
               <div class="form-group">
-                <label for="appId">appId:</label>
-                <input type="text" class="form-control" id="appId" name="appId" value="SP" />
+                <label for="promotion">promotion:</label>
+                <input type="text" class="form-control" id="promotion" name="promotion" value="T" />
               </div>
               
               <div class="form-group">
-                <label for="schType">schType:</label>
-                <select class="form-control" id="schType" name="schType">
-                    <option value="Day">Day</option>
-                	<option value="Month">Month</option>
-                	<option value="Year">Year</option>
-                </select>
+                <label for="promotionCode">promotionCode:</label>
+                <input type="text" class="form-control" id="promotionCode" name="promotionCode" value="" />
               </div>
               
               <div class="form-group">
-                <label for="nSch">nSch:</label>
-                <input type="text" class="form-control" id="nSch" name="nSch" value="1" />
+                <label for="promotionRuleCode">promotionRuleCode:</label>
+                <input type="text" class="form-control" id="promotionRuleCode" name="promotionRuleCode" value="" />
               </div>
               
               <div class="form-group">
-                <label for="sMonth">sMonth:</label>
-                <input type="text" class="form-control" id="sMonth" name="sMonth" value="${month}" />
-              </div>
-              
-              <div class="form-group">
-                <label for="sDay">sDay:</label>
-                <input type="text" class="form-control" id="sDay" name="sDay" value="${day}" />
-              </div>
-              
-              <div class="form-group">
-                <label for="sYear">sYear:</label>
-                <input type="text" class="form-control" id="sYear" name="sYear" value="${year}" />
-              </div>
-              
-              <div class="form-group">
-                <label for="name">name:</label>
-                <input type="text" class="form-control" id="name" name="name" value="Test Test" />
-              </div>
-              
-              <div class="form-group">
-                <label for="email">email:</label>
-                <input type="text" class="form-control" id="email" name="email" value="test@test.com" />
-              </div>
-              
-              <div class="form-group">
-                <label for="schStatus">schStatus:</label>
-                <input type="text" class="form-control" id="schStatus" name="schStatus" value="Active" />
+                <label for="promotionOriginalAmt">promotionOriginalAmt:</label>
+                <input type="text" class="form-control" id="promotionOriginalAmt" name="promotionRuleCode" value="" />
               </div>
               
               <button type="submit" class="btn btn-default">Submit</button>
