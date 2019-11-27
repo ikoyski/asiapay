@@ -49,9 +49,11 @@ public class AsiapayController {
         
         }
         
-        //params.put("successUrl", request.getLocalName() + "/result.jsp?flag=Successful"); 
-        //params.put("failUrl", request.getLocalName() + "/result.jsp?flag=Unsuccessful"); 
-        //params.put("cancelUrl", request.getLocalName() + "/result.jsp?flag=Canceled"); 
+        String baseUrl = "http://localhost";
+        
+        params.put("successUrl", baseUrl + "/result?flag=Successful");
+        params.put("failUrl", baseUrl + "/result?flag=Unsuccessful");
+        params.put("cancelUrl", baseUrl + "/result?flag=Canceled");
         
         String gatewayUrl = request.getParameter("gatewayUrl");
         String secureHashSecret = request.getParameter("secureHashSecret"); 
