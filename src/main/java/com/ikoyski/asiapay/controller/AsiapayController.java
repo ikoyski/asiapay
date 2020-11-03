@@ -124,7 +124,7 @@ public class AsiapayController {
         	params.put(paramName, request.getParameter(paramName));        
         }
         
-        String baseUrl = "http://localhost"; //TODO
+        String baseUrl = "http://rpi3:82/asiapay"; //TODO
         
         params.put(ATTR_SUCCESS_URL, baseUrl + "/result?flag=Successful");
         params.put(ATTR_FAIL_URL, baseUrl + "/result?flag=Unsuccessful");

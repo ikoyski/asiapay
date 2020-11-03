@@ -9,6 +9,8 @@
   <groupId>com.ikoyski</groupId>
   <artifactId>asiapay</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <!-- <packaging>jar</packaging> -->
+  <packaging>war</packaging>
   <name>asiapay</name>
   <description>Just a simple app</description>
   <properties>

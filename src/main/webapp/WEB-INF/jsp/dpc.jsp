@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/asiapay/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<c:url value="/css/main.css" var="jstlCss" />
 	<link href="${jstlCss}" rel="stylesheet" />
 </head>
@@ -15,7 +15,7 @@
     
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">AsiaPay</a></li>
+        <li class="breadcrumb-item"><a href="/asiapay">AsiaPay</a></li>
         <li class="breadcrumb-item"><a href="#">Integrations</a></li>
         <li class="breadcrumb-item active" aria-current="page">${currentPage}</li>
       </ol>
@@ -24,7 +24,7 @@
 	<div class="container">
 
 		<div class="starter-template">
-			<form action="/redirect" method="post" target="_blank">
+			<form action="/asiapay/redirect" method="post" target="_blank">
 			
 			  <div class="form-group">
                 <label for="gatewayUrl">Gateway URL:</label>
@@ -103,8 +103,8 @@
 
 	</div>
 	
-	<script src="/webjars/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/asiapay/webjars/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/asiapay/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 </html>
