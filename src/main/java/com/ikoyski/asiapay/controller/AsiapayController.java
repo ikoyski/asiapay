@@ -1,4 +1,4 @@
-package com.ikoyski.asiapay.controller; 
+package com.ikoyski.asiapay.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -124,8 +125,12 @@ public class AsiapayController {
         	params.put(paramName, request.getParameter(paramName));        
         }
         
-        String baseUrl = "http://rpi3:82/asiapay"; //TODO
-        
+        String baseUrl = ServletUriComponentsBuilder.fromRequestUri(request)
+            .replacePath(null)
+            .build()
+            .toUriString();
+        baseUrl += "/asiapay";
+
         params.put(ATTR_SUCCESS_URL, baseUrl + "/result?flag=Successful");
         params.put(ATTR_FAIL_URL, baseUrl + "/result?flag=Unsuccessful");
         params.put(ATTR_CANCEL_URL, baseUrl + "/result?flag=Canceled");
@@ -149,6 +154,13 @@ public class AsiapayController {
         model.addAttribute("params", params);
         
         return "redirect";
+    }
+
+    @GetMapping("result")
+    public String result(Model model, HttpServletRequest request) {
+        model.addAttribute(ATTR_CURRENT_PAGE, "Result");
+        model.addAttribute("flag", request.getParameter("flag"));
+        return "result";
     }
     
     @PostMapping("/api-response")
