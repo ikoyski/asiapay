@@ -25,7 +25,7 @@
 
 		<div class="starter-template">
 			
-            <h2>Payment is ${flag}</h2>
+            <h2>Payment was ${flag}</h2>
 
 		</div>
 
