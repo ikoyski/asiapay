@@ -17,4 +17,7 @@
      	<option>https://test2.siampay.com/b2cDemo/eng/dPayment/payComp.jsp</option>
      	<option>https://sit.siampay.com/b2cDemo/eng/dPayment/payComp.jsp</option>
 	</optgroup>
+    <optgroup label="BimiPay">
+        <option>https://www.bimopay.com/b2c2/eng/dPayment/payComp.jsp</option>
+   </optgroup>
 </select>
